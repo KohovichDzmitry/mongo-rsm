@@ -1,0 +1,6 @@
+1) db.objects_temp.find({stereotypes: "AlfaSystem"}).count()
+2) db.objects_temp.find({stereotypes: "AlfaComponent"})
+3) db.objects_temp.find({sparxTags: null})
+4) db.objects_temp.distinct("status")
+5) db.objects_temp.find({status:"New"},{guidParent: null})
+6) db.objects_temp.find({name:{$regex:"EQ."}})

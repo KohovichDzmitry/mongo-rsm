@@ -1,0 +1,6 @@
+1) SELECT COUNT(*) FROM objects_temp WHERE stereotypes='AlfaSystem';
+2) SELECT * FROM objects_temp WHERE stereotypes='AlfaComponent';
+3) SELECT * FROM objects_temp WHERE sparxTags=NULL;
+4) SELECT DISTINCT status FROM objects_temp;
+5) SELECT * FROM objects_temp WHERE status='New' AND guidParent=NULL;
+6) SELECT * FROM objects_temp WHERE name LIKE 'EQ.%';
