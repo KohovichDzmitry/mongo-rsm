@@ -1,20 +1,19 @@
 package app.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Entity
 @Data
+@AllArgsConstructor
+@Document("objects_temp")
 public class ObjectsTemp {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ObjectId _id;
     private String _class;
     private String archSA;

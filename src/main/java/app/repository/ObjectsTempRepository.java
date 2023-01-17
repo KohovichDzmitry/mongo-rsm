@@ -5,21 +5,23 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
+import java.util.List;
+
 public interface ObjectsTempRepository extends MongoRepository<ObjectsTemp, ObjectId> {
 
-    @Query(value = "SELECT COUNT(*) FROM objects_temp WHERE stereotypes='AlfaSystem'")
-    Integer findCountStereotypeBy();
+    @Query("{stereotypes: '?0'}")
+    Integer countObjectsTempByStereotype(String stereotype);
 
-    @Query(value = "SELECT * FROM objects_temp WHERE stereotypes='AlfaComponent'")
-    Integer findStereotypeBy();
+    @Query("{stereotypes: '?0'}")
+    List<ObjectsTemp> findAllByStereotype(String stereotype);
 
-    Integer findAllBySparxTagsIsNull();
+    List<ObjectsTemp> findAllBySparxTagsIsNull();
 
-    Integer findDistinctByStatus();
+    List<String> findDistinctStatus();
 
-    @Query(value = "SELECT * FROM objects_temp WHERE status='New' AND guidParent=NULL")
-    Integer findAllByStatusAndGuidParent();
+    @Query("{status: '?0'}")
+    List<ObjectsTemp> findAllByStatusAndGuidParentIsNull(String status);
 
-    @Query(value = "SELECT * FROM objects_temp WHERE name LIKE 'EQ.%'")
-    Integer findAllByNameLike();
+    @Query("{name:{$regex:'EQ.'}}")
+    List<ObjectsTemp> findAllByNameLike();
 }
