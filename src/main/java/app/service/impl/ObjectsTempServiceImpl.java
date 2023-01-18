@@ -32,8 +32,8 @@ public class ObjectsTempServiceImpl implements ObjectsTempService {
     }
 
     @Override
-    public List<String> findDistinctStatus() {
-        return repository.findDistinctStatus();
+    public List<String> findDistinctByStatus() {
+        return repository.findDistinctByStatus();
     }
 
     @Override

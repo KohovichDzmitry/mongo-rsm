@@ -31,8 +31,8 @@ public class ObjectsTempController {
     }
 
     @GetMapping("/distinctStatus")
-    public ResponseEntity<List<String>> findDistinctStatus() {
-        return ResponseEntity.ok(service.findDistinctStatus());
+    public ResponseEntity<List<String>> findDistinctByStatus() {
+        return ResponseEntity.ok(service.findDistinctByStatus());
     }
 
     @GetMapping("/statusAndGuidParentIsNull/{status}")

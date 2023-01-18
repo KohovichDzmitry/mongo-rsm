@@ -1,0 +1,13 @@
+1) SELECT teacher.last_name 
+FROM teacher 
+JOIN schedule ON teacher.id=schedule.teacher
+JOIN class ON schedule.class=class.id
+WHERE class.name='Physical Culture'
+ORDER BY teacher.last_name;
+2) SELECT COUNT(*)
+FROM student_in_class
+GROUP BY student_in_class.id
+ORDER BY COUNT(student_in_class.student) DESC;
+3) SELECT student.last_name, student.first_name, student.middle_name
+FROM student
+ORDER BY student.first_name;

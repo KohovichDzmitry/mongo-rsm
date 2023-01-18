@@ -12,7 +12,7 @@ public interface ObjectsTempService {
 
     List<ObjectsTemp> findAllBySparxTagsIsNull();
 
-    List<String> findDistinctStatus();
+    List<String> findDistinctByStatus();
 
     List<ObjectsTemp> findAllByStatusAndGuidParentIsNull(String status);
 

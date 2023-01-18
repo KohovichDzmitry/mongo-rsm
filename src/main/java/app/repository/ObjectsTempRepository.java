@@ -10,14 +10,14 @@ import java.util.List;
 public interface ObjectsTempRepository extends MongoRepository<ObjectsTemp, ObjectId> {
 
     @Query("{stereotypes: '?0'}")
-    Integer countObjectsTempByStereotype(String stereotype);
+    Integer countObjectsTempByStereotype(String stereotypes);
 
     @Query("{stereotypes: '?0'}")
     List<ObjectsTemp> findAllByStereotype(String stereotype);
 
     List<ObjectsTemp> findAllBySparxTagsIsNull();
 
-    List<String> findDistinctStatus();
+    List<String> findDistinctByStatus();
 
     @Query("{status: '?0'}")
     List<ObjectsTemp> findAllByStatusAndGuidParentIsNull(String status);
